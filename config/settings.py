@@ -9,11 +9,11 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+import dotenv
 import os
 from pathlib import Path
 from dotenv import load_dotenv
 from datetime import timedelta
-import dotenv
 dotenv.load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,11 +24,11 @@ load_dotenv(dotenv_path=dot_env)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.getenv('SECRET_KEY')
-SECRET_KEY = 'django-insecure-=e=m$n(6h*@$t4u18!46q5^qltmit@9qlvdy5g07$971ld_q1f'
+SECRET_KEY = "django-insecure-!p%2+y3rvaaongk&slw#yj9$q%o&&h!tx6v5a)v-rt&x=ujf33"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -41,12 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'rest_framework_simplejwt',
-    'drf_yasg',
-    'corsheaders',
-    'django_celery_beat',
-    'django_filters',
-    'products',
+    #'rest_framework_simplejwt',
+    #'drf_yasg',
+    #'corsheaders',
+    #'django_celery_beat',
+    #'django_filters',
+    #'products',
     'products.apps.ProductsConfig',
 ]
 
