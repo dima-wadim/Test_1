@@ -23,12 +23,12 @@ load_dotenv(dotenv_path=dot_env)
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
-
+# SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'django-insecure-=e=m$n(6h*@$t4u18!46q5^qltmit@9qlvdy5g07$971ld_q1f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_celery_beat',
     'django_filters',
     'products',
+    'products.apps.ProductsConfig',
 ]
 
 MIDDLEWARE = [
@@ -86,11 +87,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     "default": {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'PORT': os.environ.get('POSTGRES_PORT'),
-        'HOST': os.environ.get('POSTGRES_HOST')
+        'NAME': BASE_DIR / 'postgresql',
+        # 'NAME': os.getenv('POSTGRES_DB'),
+        # 'USER': os.getenv('POSTGRES_USER'),
+        # 'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        # 'PORT': os.environ.get('POSTGRES_PORT'),
+        # 'HOST': os.environ.get('POSTGRES_HOST')
     }
 }
 
